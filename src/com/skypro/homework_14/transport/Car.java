@@ -2,7 +2,7 @@ package com.skypro.homework_14.transport;
 
 import java.time.LocalDate;
 
-public class Car {
+public class Car extends Transport{
     public static class Key {
         private boolean remoteEngineStart;
         private boolean keylessStart;
@@ -37,12 +37,12 @@ public class Car {
         }
     }
     private Key key;
-    private final String brand;
-    private final String model;
+//    private final String brand;
+//    private final String model;
     private double engineVolume;
-    private String color;
-    private final int year;
-    private final String country;
+//    private String color;
+//    private final int year;
+//    private final String country;
     private String transmission;
     private final String bodyType;
     private int registrationNumber;
@@ -54,38 +54,42 @@ public class Car {
 
     private static final String DEFAULT_VALUE = "default";
     private static final double DEFAULT_ENGINE_VOLUME = 1.5;
-    private static final String DEFAULT_COLOR = "white";
-    private static final int DEFAULT_YEAR = 2000;
+//    private static final String DEFAULT_COLOR = "white";
+//    private static final int DEFAULT_YEAR = 2000;
     private static final int DEFAULT_SEATS = 5;
+
+    private static final double MAX_SPEED = 80.0;
+
 
 
     public Car(boolean remoteEngineStart, boolean keylessStart, String brand, String model, double engineVolume, String color, int year, String country,
-               String transmission, String bodyType, int registrationNumber, int numberOfSeats, String tires) {
+               String transmission, String bodyType, int registrationNumber, int numberOfSeats, String tires, double maxSpeed) {
+        super(brand, model, year, country, color, maxSpeed);
         setKey(remoteEngineStart, keylessStart);
-        if (brand.isBlank() && brand.isEmpty() || brand == null) {
-            this.brand = DEFAULT_VALUE;
-        } else {
-            this.brand = brand;
-        }
-        if (model.isBlank() && model.isEmpty() || model == null) {
-            this.model = DEFAULT_VALUE;
-        } else {
-            this.model = model;
-        }
+//        if (brand.isBlank() && brand.isEmpty() || brand == null) {
+//            this.brand = DEFAULT_VALUE;
+//        } else {
+//            this.brand = brand;
+//        }
+//        if (model.isBlank() && model.isEmpty() || model == null) {
+//            this.model = DEFAULT_VALUE;
+//        } else {
+//            this.model = model;
+//        }
         setEngineVolume(engineVolume);
         setColor(color);
-        if (year < 0) {
-            this.year = Math.abs(numberOfSeats);
-        } else if (year == 0) {
-            this.year = DEFAULT_YEAR;
-        } else {
-            this.year = year;
-        }
-        if (country.isBlank() && country.isEmpty() || country == null) {
-            this.country = DEFAULT_VALUE;
-        } else {
-            this.country = country;
-        }
+//        if (year < 0) {
+//            this.year = Math.abs(year);
+//        } else if (year == 0) {
+//            this.year = DEFAULT_YEAR;
+//        } else {
+//            this.year = year;
+//        }
+//        if (country.isBlank() && country.isEmpty() || country == null) {
+//            this.country = DEFAULT_VALUE;
+//        } else {
+//            this.country = country;
+//        }
         setTransmission(transmission);
         if (bodyType.isBlank() && bodyType.isEmpty() || bodyType == null) {
             this.bodyType = null;
@@ -203,7 +207,7 @@ public class Car {
         }
     }
 
-    public String getColor() {
+    /*public String getColor() {
         return color;
     }
 
@@ -213,7 +217,7 @@ public class Car {
         } else {
             this.color = color;
         }
-    }
+    }*/
 
     public String getTransmission() {
         return transmission;
@@ -221,7 +225,7 @@ public class Car {
 
     public void setTransmission(String transmission) {
         if (transmission.isBlank() && transmission.isEmpty() || transmission == null) {
-            this.transmission = null;
+            this.transmission = DEFAULT_VALUE;
         } else {
             this.transmission = transmission;
         }
@@ -247,7 +251,7 @@ public class Car {
         this.tires = changeTire();
     }
 
-    public String getBrand() {
+    /*public String getBrand() {
         return brand;
     }
 
@@ -261,7 +265,7 @@ public class Car {
 
     public String getCountry() {
         return country;
-    }
+    }*/
 
     public String getBodyType() {
         return bodyType;
@@ -290,9 +294,9 @@ public class Car {
 
     @Override
     public String toString() {
-        return brand + " " + model + ", " + year + " год выпуска, сборка в "
-                + country + ", цвет - " + color + ", объем двигателя - " + engineVolume
-                + " л." + transmission + ", " + bodyType + ", " + registrationNumber + ", " + numberOfSeats + ", " +
-                tires + ", " + key;
+        return getBrand() + " " + getModel() + ", " + getYear() + " год выпуска, сборка в "
+                + getCountry() + ", цвет - " + getColor() + ", объем двигателя - " + getEngineVolume()
+                + " л." + getTransmission() + ", " + getBodyType() + ", " + getRegistrationNumber() + ", " + getNumberOfSeats() + ", " +
+                tires + ", " + key + ", максимальная скорость: " + getMaxSpeed() + " км/ч.";
     }
 }

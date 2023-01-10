@@ -1,8 +1,9 @@
 package com.skypro.homework_14;
 
 import com.skypro.homework_14.transport.Car;
+import com.skypro.homework_14.transport.Bus;
 
-public class Main { //Не совсем понял задание, нужно ли создавать объекты в массиве, как в курсовой?
+public class Main { //На всякий случай все ненужное закомментировал, могу все удалить, если можно.
     public static void main(String[] args) {
 
         /*Car car = new Car();
@@ -38,8 +39,16 @@ public class Main { //Не совсем понял задание, нужно л
 //        System.out.println(car6);
 
         Car car7 = new Car(true,true, "Hyundai", "Avante", 1.6, "", 0, "South Korea",
-                "", "", -555, 0, "");
+                "", "", -555, 0, "",100.0);
 
         System.out.println(car7);
+
+        Bus volga = new Bus("Волга", "БУС", 2012, "Россия", "синий", 54, 90.0);
+        Bus ikarus = new Bus("Икарус", "БУС", 1995, "Россия", "красный", 60, 60.0);
+        Bus blueBird = new Bus("Blue", "Bird TC/2000", 1988, "USA", "yellow", 90, 110.0);
+
+        System.out.println(volga);
+        System.out.println(ikarus);
+        System.out.println(blueBird);
     }
 }
