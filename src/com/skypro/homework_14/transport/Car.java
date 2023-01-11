@@ -54,8 +54,6 @@ public class Car extends Transport{
 
     private static final String DEFAULT_VALUE = "default";
     private static final double DEFAULT_ENGINE_VOLUME = 1.5;
-//    private static final String DEFAULT_COLOR = "white";
-//    private static final int DEFAULT_YEAR = 2000;
     private static final int DEFAULT_SEATS = 5;
 
     private static final double MAX_SPEED = 80.0;

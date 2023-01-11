@@ -23,7 +23,7 @@ public abstract class Transport {
         } else {
             this.year = year;
         }
-        if (country.isBlank() && country.isEmpty() || country == null) {
+        if (country == null || country.isBlank() || country.isEmpty()) {
             this.country = DEFAULT_VALUE;
         } else {
             this.country = country;
@@ -37,7 +37,7 @@ public abstract class Transport {
     }
 
     public void setBrand(String brand) {
-        if (brand == null || brand.isEmpty() && brand.isBlank()) {
+        if (brand == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = DEFAULT_VALUE;
         } else {
             this.brand = brand;
@@ -49,7 +49,7 @@ public abstract class Transport {
     }
 
     public void setModel(String model) {
-        if (model == null || model.isEmpty() && model.isBlank()) {
+        if (model == null || model.isEmpty() || model.isBlank()) {
             this.model = DEFAULT_VALUE;
         } else {
             this.model = model;
@@ -71,7 +71,7 @@ public abstract class Transport {
     }
 
     public void setColor(String color) {
-        if (color == null || color.isEmpty() && color.isBlank()) {
+        if (color == null || color.isEmpty() || color.isBlank()) {
             this.color = DEFAULT_COLOR;
         } else {
             this.color = color;

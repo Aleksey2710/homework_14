@@ -43,9 +43,9 @@ public class Main { //На всякий случай все ненужное з�
 
         System.out.println(car7);
 
-        Bus volga = new Bus("Волга", "БУС", 2012, "Россия", "синий", 54, 90.0);
-        Bus ikarus = new Bus("Икарус", "БУС", 1995, "Россия", "красный", 60, 60.0);
-        Bus blueBird = new Bus("Blue", "Bird TC/2000", 1988, "USA", "yellow", 90, 110.0);
+        Bus volga = new Bus("Волга", "БУС", 2012, "Россия", "синий",  90.0);
+        Bus ikarus = new Bus("Икарус", "БУС", 1995, "Россия", "красный", 60.0);
+        Bus blueBird = new Bus("Blue", "Bird TC/2000", 1988, "USA", "yellow", 110.0);
 
         System.out.println(volga);
         System.out.println(ikarus);
